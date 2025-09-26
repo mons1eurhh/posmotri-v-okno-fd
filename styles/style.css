@@ -70,9 +70,10 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  height: 54px;
   margin-top: 16px;
 }
+
+/*Удалил фиксированную высоту для search-form*/
 
 .search-form__fieldset {
   border: none;
@@ -93,10 +94,12 @@ ol {
   gap: 5px;
 }
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text{
   text-decoration: underline;
   cursor: pointer;
 }
+
+/*проконтролировал что при наведении у поискового инпута не возникает нижнего подчёркивания.*/
 
 .search-form__label:has(:not(:active):focus-visible) {
   outline: 1px #fff solid ;
@@ -130,13 +133,15 @@ ol {
 
 .button {
   font-family: 'Fira Sans Condensed', sans-serif;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   background-color: transparent;
   color: #fff;
   font-size: 18px;
   font-weight: 700;
   min-height: 34px;
 }
+
+/*использовал currentColor для border*/
 
 .button:active {
   background-color: #545050;
@@ -176,12 +181,6 @@ ol {
   font-size: inherit;
   -webkit-appearance: none;
   -moz-appearance: none;
-  /*Когда элемент в фокусе — добавьте границу вокруг с использованием outline. 
-  У этого элемента нужно сбросить обводку в состоянии фокуса и вместо этого 
-  сделать границу у лейбла, который его окружает. Лейбл должен получать границу, 
-  только когда поле находится в состоянии :focus-visible, но не :focus. Чтобы это 
-  реализовать, можно применить хитрую комбинацию псевдоклассов на классе лейбла
-   — :has(:focus-visible).*/
 }
 
 .search-form__textfield::placeholder {
@@ -320,14 +319,17 @@ ol {
 }
 
 
-.content__video-card:active {
+.content__card-link:active {
   background-color: #545050;
 }
 
-.content__video-card:hover {
+/*использовал интерактивный элемент .content__card-link*/
+
+.content__card-link:hover {
   text-decoration: underline;
 }
 
+/*использовал интерактивный элемент .content__card-link*/
 
 
 
