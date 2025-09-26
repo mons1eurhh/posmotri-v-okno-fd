@@ -1,1 +1,1 @@
-https://github.com/mons1eurhh/posmotri-v-okno-fd#
+https://github.com/mons1eurhh/posmotri-v-okno-fd
