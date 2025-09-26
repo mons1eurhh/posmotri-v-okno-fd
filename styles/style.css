@@ -8,16 +8,6 @@ html {
   block-size: 100%;
 }
 
-.page {
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  background-color: #1b1919;
-}
-
 h1,
 h2,
 h3,
@@ -37,6 +27,226 @@ ol {
   list-style: none;
 }
 
+.page {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  inline-size: 1200px;
+  block-size: 100%;
+  margin: auto;
+  color: #fff;
+  font-size: 18px;
+  background-color: #1b1919;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  align-items: end;
+  width: 1140px;
+  margin: 133px 30px;
+  gap: 30px;
+}
+
+.result {
+  place-content: center;
+  width: min-content;
+  align-items: end;
+}
+
+.result__video-container {
+  width: 711px;
+  height: 386px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.result__video {
+  height: 386px;
+  width: 711px;
+  object-fit: cover;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  height: 54px;
+  margin-top: 16px;
+}
+
+.search-form__fieldset {
+  border: none;
+  flex-direction: column;
+  display: flex;
+  gap: 5px;
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 5px;
+}
+
+.search-form__label:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.search-form__label:has(:not(:active):focus-visible) {
+  outline: 1px #fff solid ;
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 19px;
+  block-size: 19px;
+  border: 1px solid #fff;
+  padding: 1px;
+}
+
+.button {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  min-height: 34px;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  align-self: flex-end;
+  cursor: pointer
+}
+
+.button:focus-visible {
+  outline: 1px #fff solid ;
+  outline-offset: 1px;
+}
+
+.search-form__checkbox {
+  outline: none;
+}
+
+.search-form__textfield {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  border: 1px solid #fff;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  appearance: none;
+  width: 225px;
+  height: 27px;
+  color: #fff;
+  caret-color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /*Когда элемент в фокусе — добавьте границу вокруг с использованием outline. 
+  У этого элемента нужно сбросить обводку в состоянии фокуса и вместо этого 
+  сделать границу у лейбла, который его окружает. Лейбл должен получать границу, 
+  только когда поле находится в состоянии :focus-visible, но не :focus. Чтобы это 
+  реализовать, можно применить хитрую комбинацию псевдоклассов на классе лейбла
+   — :has(:focus-visible).*/
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+  font-size: 18px;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  background-color: #fff;
+  opacity: 1;
+} 
+
+.content__details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-inline-size: 399px;
+  gap: 26px;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list-container {
+  position: relative; 
+  display: flex; 
+  flex-direction: column; 
+  block-size: 298px; 
+  overflow-y: auto; 
+  gap: 30px; 
+}
+
+.content__list-item {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
 /* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
@@ -49,3 +259,81 @@ ol {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
 }
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__card-link {
+  text-decoration-line: none;
+  color: #fff;
+  display: block;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  flex-basis: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__video-card-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content__video-card-description {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  line-height: 90%;
+  font-size: 18px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+
+.content__video-card:active {
+  background-color: #545050;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
